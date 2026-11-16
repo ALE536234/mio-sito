@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Galleria - Portfolio di Alejandro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contenitore">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="competenze.html">Competenze</a>
+      <a href="hobby.html">Hobby</a>
+      <a href="interessi.html">Interessi</a>
+      <a href="galleria.html">Galleria</a>
+    </nav>
+
+    <header>
+      <h1>La mia galleria fotografica</h1>
+      <span class="badge">Le mie 3 foto</span>
+    </header>
+
+    <section>
+      <h2>Immagini</h2>
+      <div class="galleria">
+        
+        <div class="scheda-foto">
+          <img id="anteprima1" src="foto1.jpg" alt="Il mio animale preferito">
+          <label class="bottone-carica">
+            📷 Carica foto 1
+            <input type="file" accept="image/*" onchange="caricaFoto(event, 'anteprima1')">
+          </label>
+        </div>
+
+        <div class="scheda-foto">
+          <img id="anteprima2" src="foto2.jpg" alt="Un oggetto che mi piace">
+          <label class="bottone-carica">
+            📷 Carica foto 2
+            <input type="file" accept="image/*" onchange="caricaFoto(event, 'anteprima2')">
+          </label>
+        </div>
+
+        <div class="scheda-foto">
+          <img id="anteprima3" src="foto3.jpg" alt="Un disegno">
+          <label class="bottone-carica">
+            📷 Carica foto 3
+            <input type="file" accept="image/*" onchange="caricaFoto(event, 'anteprima3')">
+          </label>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Descrizione delle foto</h2>
+      <table>
+        <tr>
+          <th>Foto</th>
+          <th>Nome file</th>
+          <th>Soggetto</th>
+        </tr>
+        <tr>
+          <td>Foto 1</td>
+          <td>foto1.jpg</td>
+          <td>Il mio animale preferito</td>
+        </tr>
+        <tr>
+          <td>Foto 2</td>
+          <td>foto2.jpg</td>
+          <td>Un oggetto che mi piace</td>
+        </tr>
+        <tr>
+          <td>Foto 3</td>
+          <td>foto3.jpg</td>
+          <td>Un disegno</td>
+        </tr>
+      </table>
+    </section>
+
+    <footer>
+      <p>Sito realizzato da Alejandro • Corso di Informatica</p>
+    </footer>
+  </div>
+
+  <script>
+    function caricaFoto(evento, idImmagine) {
+      const file = evento.target.files[0];
+      if (file) {
+        const immagine = document.getElementById(idImmagine);
+        immagine.src = URL.createObjectURL(file);
+      }
+    }
+  </script>
+
+</body>
+</html>
